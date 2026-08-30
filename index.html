@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>熊本サウナ旅</title>
+<meta name="description" content="九州ふっこう応援割で行く熊本サウナ旅。サウナ・宿泊・観光・モデルプラン・交通セール・割引情報。">
+<style>
+:root{
+  --bg:#F3EEE3; --card:#FFFFFF; --ink:#2A241A; --sub:#6E6659;
+  --accent:#BE3A2E; --water:#0E6E8C; --water-bg:#E3EFF3;
+  --line:#E3DBCB; --deco:rgba(255,255,255,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  line-height:1.8; -webkit-font-smoothing:antialiased;
+}
+body,p,li,td,th,div,span,b,small,button,a,h1,h2,h3{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+h1,h2,h3,.badge{text-wrap:balance}
+p{text-wrap:pretty}
+.num{font-variant-numeric:tabular-nums}
+.app{max-width:520px;margin:0 auto;padding:0 16px 96px;position:relative}
+img{max-width:100%;display:block}
+
+header{padding:26px 4px 10px;position:relative;overflow:hidden}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.16em;color:var(--accent)}
+h1{font-size:30px;line-height:1.3;font-weight:800;letter-spacing:.01em;margin:2px 0 4px}
+.lead{font-size:14px;color:var(--sub)}
+.hero-deco{position:absolute;top:-46px;right:-58px;width:200px;height:200px;border-radius:0 0 0 100%;background:var(--deco);pointer-events:none}
+
+main>section{display:none;animation:in .35s cubic-bezier(.22,1,.36,1) both}
+main>section.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:22px 4px 10px}
+h2{font-size:19px;font-weight:800}
+.count{font-size:13px;color:var(--sub);font-weight:700}
+
+.q{background:var(--card);border-radius:16px;margin:12px 0;overflow:hidden}
+.q-photo{position:relative;aspect-ratio:16/9;background:#E6DFD1}
+.q-photo img{width:100%;height:100%;object-fit:cover}
+.q-cap{position:absolute;left:0;bottom:0;right:0;padding:16px 14px 8px;font-size:12.5px;color:#fff;
+  background:linear-gradient(transparent,rgba(30,22,14,.72));text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.q-body{padding:14px 18px 16px}
+.q-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.q-name{font-size:17px;font-weight:800;line-height:1.45}
+.badge{font-size:13px;font-weight:800;padding:2px 9px;border-radius:6px;white-space:nowrap}
+.b-water{background:var(--water-bg);color:var(--water)}
+.b-food{background:#F6EBD3;color:#8A5F14}
+.b-view{background:#E4EFE1;color:#2E6B3E}
+.b-stay{background:#EDE7F3;color:#5B3E86}
+.q-desc{font-size:14px;color:var(--sub);line-height:1.7;margin-top:5px}
+.q-meta{font-size:13px;color:var(--sub);margin-top:7px}
+.q-meta b{color:var(--ink)}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.links a{font-size:13.5px;font-weight:800;text-decoration:none;padding:8px 14px;border-radius:999px;
+  background:#F6F1E7;color:var(--ink);display:inline-flex;align-items:center;gap:5px;
+  transition:transform .12s cubic-bezier(.34,1.56,.64,1),background .12s ease}
+.links a:hover{background:#EFE7D8;transform:translateY(-2px)}
+.links a.go{background:var(--accent);color:#FFF4EC}
+.links a.go:hover{background:#A62F25}
+.links a::after{content:"↗";font-size:12px;opacity:.65}
+
+.day{background:var(--card);border-radius:16px;padding:18px;margin:12px 0;position:relative;overflow:hidden}
+.day-tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.1em;color:#FFF4EC;background:var(--ink);padding:3px 12px;border-radius:6px}
+.day h3{font-size:17px;font-weight:800;margin:8px 0 6px;position:relative;z-index:1}
+.tl{list-style:none;position:relative;z-index:1}
+.tl li{font-size:14px;padding:7px 0 7px 22px;position:relative;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:none}
+.tl li::before{content:"";position:absolute;left:4px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.tl b{font-weight:800}
+.tl .t{color:var(--sub);font-size:13px;font-weight:700;margin-right:6px}
+
+.plan{background:var(--card);border-radius:16px;margin:14px 0;overflow:hidden}
+.plan-photo{aspect-ratio:16/7;background:#E6DFD1}
+.plan-photo img{width:100%;height:100%;object-fit:cover}
+.plan-body{padding:16px 18px 18px}
+.plan-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.nights{font-size:13px;font-weight:800;color:#FFF4EC;background:var(--ink);padding:2px 10px;border-radius:6px;white-space:nowrap}
+.plan h3{font-size:18px;font-weight:800;line-height:1.4}
+.plan-for{font-size:13.5px;color:var(--sub);margin-top:4px}
+.plan-flow{font-size:14px;margin-top:10px;padding:11px 13px;background:#F8F4EB;border-radius:10px;line-height:1.75}
+.est{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.est-row{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:4px 0}
+.est-row span:first-child{color:var(--sub)}
+.est-row.total{border-top:1px solid var(--line);margin-top:6px;padding-top:9px;font-weight:800;font-size:16px}
+.est-row.total span:first-child{color:var(--ink)}
+.est-row.total .v{color:var(--accent);font-size:20px}
+.est-note{font-size:13px;color:var(--sub);margin-top:8px}
+
+.tbl-wrap{overflow-x:auto;background:var(--card);border-radius:16px;padding:6px 4px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:430px}
+th{font-size:13px;color:var(--sub);text-align:left;font-weight:800;padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td .price{font-weight:800;white-space:nowrap}
+.tag-best{font-size:12.5px;font-weight:800;color:#FFF4EC;background:var(--accent);padding:2px 8px;border-radius:6px;white-space:nowrap}
+
+.note{background:var(--card);border-radius:16px;padding:16px 18px;margin:12px 0}
+.note h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.note p,.note li{font-size:14px;color:var(--ink)}
+.note ul{padding-left:20px}
+.note .src{font-size:13px;color:var(--sub);margin-top:8px}
+.note a{color:var(--water);font-weight:700}
+.big-off{display:flex;align-items:baseline;gap:8px;margin:4px 0 8px}
+.big-off b{font-size:44px;font-weight:800;color:var(--accent);line-height:1;letter-spacing:.01em}
+.big-off span{font-size:15px;font-weight:800}
+.warn{background:#F9EFD9;border-radius:12px;padding:12px 14px;font-size:14px;margin-top:10px}
+.warn b{color:#8A5F14}
+.steps{counter-reset:s;list-style:none;margin-top:8px}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 40px;font-size:14px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:none}
+.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#FBF7EE;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+
+.budget{display:flex;gap:10px;margin:12px 0}
+.budget>div{flex:1;background:var(--card);border-radius:16px;padding:14px 16px;text-align:center}
+.budget .l{font-size:13px;color:var(--sub);font-weight:700}
+.budget .v{font-size:22px;font-weight:800;margin-top:2px}
+.budget .v.now{color:var(--accent)}
+.budget .strike{text-decoration:line-through;text-decoration-thickness:2px;color:var(--sub)}
+
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;z-index:50}
+nav button{flex:1;background:none;border:none;cursor:pointer;padding:9px 0 11px;font-size:12.5px;font-weight:800;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit}
+nav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--accent)}
+footer{padding:26px 4px 12px;font-size:13px;color:var(--sub)}
+footer a{color:var(--sub)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="hero-deco"></div>
+  <div class="eyebrow">KUMAMOTO SAUNA TRIP</div>
+  <h1>熊本サウナ旅</h1>
+  <p class="lead">ふっこう応援割でととのう熊本。下のメニューから気になるところをどうぞ。</p>
+</header>
+
+<main>
+<section id="tab-sauna" class="on">
+  <div class="sec-h"><h2>サウナ</h2><span class="count">5スポット</span></div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/sauna.jpg" alt="ロウリュができるサウナ室の内観" loading="lazy">
+      <div class="q-cap">※イメージ写真（Uusikaupunki, Finland／Math・CC BY-SA 2.5）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">湯らっくす</span><span class="badge b-water">水深171cm</span></div>
+      <p class="q-desc">日本一深い水風呂と毎時アウフグース。ここに入らずして熊本サウナは語れない。24時間営業で宿泊もできる。</p>
+      <div class="q-meta">熊本市・フリー<b>1,650円〜</b>・熊本駅から車5分</div>
+      <div class="links"><a class="go" href="https://www.yulax.info/" target="_blank" rel="noopener">公式サイト</a><a href="https://travel.rakuten.co.jp/HOTEL/183778/183778.html" target="_blank" rel="noopener">楽天で予約</a><a href="https://www.jalan.net/yad332038/" target="_blank" rel="noopener">じゃらん</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/rotenburo.jpg" alt="岩に囲まれた露天の湯船" loading="lazy">
+      <div class="q-cap">※イメージ写真（Markmark28・CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">熊本城サウナ 城の湯</span><span class="badge b-water">井水の水風呂</span></div>
+      <p class="q-desc">本丸サウナと、武蔵の洞窟をイメージした霊巌洞サウナ。井水の露天水風呂が2つ。2025年オープンの新鋭。</p>
+      <div class="q-meta">熊本市・時間無制限<b>1,200円</b>・男性専用・木曜定休</div>
+      <div class="links"><a class="go" href="https://shironoyu.com/" target="_blank" rel="noopener">公式サイト</a><a href="https://sauna-ikitai.com/saunas/88756" target="_blank" rel="noopener">サウナイキタイ</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/tentsauna.jpg" alt="屋外に張られたテントサウナ" loading="lazy">
+      <div class="q-cap">※イメージ写真（Agryfp・CC0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">MIKI TAO SAUNA</span><span class="badge b-water">清流水風呂</span></div>
+      <p class="q-desc">森の中のテントサウナを2時間貸切。川底が一枚岩の清流に半身で沈む唯一無二の外気浴。秋は紅葉×川。</p>
+      <div class="q-meta">阿蘇市・2人<b>6,000円</b>・完全予約制（1日3枠）</div>
+      <div class="links"><a class="go" href="https://mikitaosauna.com/" target="_blank" rel="noopener">公式サイト</a><a href="https://reserva.be/mikitaosauna" target="_blank" rel="noopener">貸切を予約</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/aso.jpg" alt="阿蘇山の風景" loading="lazy">
+      <div class="q-cap">阿蘇山（Suicasmo・CC BY-SA 4.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">火の山温泉 どんどこ湯</span><span class="badge b-water">日帰り湯</span></div>
+      <p class="q-desc">阿蘇の湯で1日を締める。桜町バスターミナルから直行バスの路線上にあり、テントサウナの帰りに寄りやすい。</p>
+      <div class="q-meta">阿蘇市・桜町から直行バスあり</div>
+      <div class="links"><a class="go" href="https://www.dondokoyu.com/" target="_blank" rel="noopener">公式サイト</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/kurokawa.jpg" alt="黒川温泉の温泉街" loading="lazy">
+      <div class="q-cap">黒川温泉（veroyama・CC BY-SA 2.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">黒川温泉 入湯手形</span><span class="badge b-water">露天巡り</span></div>
+      <p class="q-desc">日本屈指の温泉街で露天を3湯はしご。2泊目を黒川に振るならこのルート。</p>
+      <div class="q-meta">南小国町・熊本駅からバス約3時間 / 空港から約1時間50分</div>
+      <div class="links"><a class="go" href="https://www.kurokawaonsen.or.jp/" target="_blank" rel="noopener">観光協会</a><a href="https://www.kurokawaonsen.or.jp/access/index.php" target="_blank" rel="noopener">アクセス</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-stay">
+  <div class="sec-h"><h2>宿泊</h2><span class="count">割引はOTA経由の宿が対象見込み</span></div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/sauna.jpg" alt="サウナ室" loading="lazy">
+      <div class="q-cap">※イメージ写真（Math・CC BY-SA 2.5）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">湯らっくすに泊まる</span><span class="badge b-stay">サウナ勢の本命</span></div>
+      <p class="q-desc">ドミトリー4,800円〜、ダブルベッドのスマートホテルもあり。寝る前も朝イチもサウナに直行できる。</p>
+      <div class="q-meta">熊本市・ドミトリー<b>4,800円〜</b>・OTA予約可＝割引が効けば実質2,000円前後</div>
+      <div class="links"><a class="go" href="https://travel.rakuten.co.jp/HOTEL/183778/183778.html" target="_blank" rel="noopener">楽天で予約</a><a href="https://www.jalan.net/yad332038/" target="_blank" rel="noopener">じゃらん</a><a href="https://www.yulax.info/" target="_blank" rel="noopener">公式</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/hotel.jpg" alt="ツインベッドのホテル客室" loading="lazy">
+      <div class="q-cap">※イメージ写真（CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">ドーミーイン熊本</span><span class="badge b-stay">大浴場サウナ付き</span></div>
+      <p class="q-desc">サウナ付き大浴場と夜鳴きそばの定番チェーン。繁華街の下通エリアで、飲んで帰ってひと風呂の動線が完璧。</p>
+      <div class="q-meta">熊本市中心部・パックの部屋在庫が豊富</div>
+      <div class="links"><a class="go" href="https://dormy-hotels.com/dormyinn/hotels/kumamoto/" target="_blank" rel="noopener">公式サイト</a><a href="https://travel.rakuten.co.jp/keyword/%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3%E7%86%8A%E6%9C%AC/" target="_blank" rel="noopener">楽天で探す</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/shimotori.jpg" alt="熊本市の下通アーケード" loading="lazy">
+      <div class="q-cap">下通アーケード（663highland・CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">ホテル日航熊本</span><span class="badge b-stay">立地重視</span></div>
+      <p class="q-desc">通町筋の電停すぐ・熊本城も繁華街も徒歩圏の大手シティホテル。JAL/ANAパックに組み込みやすい。</p>
+      <div class="q-meta">熊本市中心部</div>
+      <div class="links"><a class="go" href="https://nikko-kumamoto.co.jp/" target="_blank" rel="noopener">公式サイト</a><a href="https://www.jal.co.jp/jp/ja/domtour/" target="_blank" rel="noopener">JALパック</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/kurokawa.jpg" alt="黒川温泉の宿の風情" loading="lazy">
+      <div class="q-cap">黒川温泉（veroyama・CC BY-SA 2.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">黒川温泉 旅館 湯本荘</span><span class="badge b-stay">客室サウナ</span></div>
+      <p class="q-desc">サウナ・水風呂・外気浴が部屋に付いてくる特別室。宿ごと割引対象にできれば、いちばん贅沢な使い方になる。</p>
+      <div class="q-meta">南小国町・特別室は数が少ないので早めに</div>
+      <div class="links"><a class="go" href="https://www.yumotoso.jp/" target="_blank" rel="noopener">公式サイト</a><a href="https://www.jalan.net/yad316798/" target="_blank" rel="noopener">じゃらんで予約</a></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Airbnbはどうか</h3>
+    <p>下通・上通アーケード周辺なら2人で1泊1万円を切る部屋も探せる。ただし<b>ふっこう応援割は旅行会社・予約サイト経由の宿泊が対象になる見込みで、Airbnbは対象外の公算が大きい</b>。割引を使う前提ならホテル・旅館優先が堅い。</p>
+    <div class="links"><a href="https://www.airbnb.jp/s/Kumamoto/homes" target="_blank" rel="noopener">Airbnbで熊本を見る</a></div>
+  </div>
+</section>
+
+<section id="tab-sight">
+  <div class="sec-h"><h2>観光</h2><span class="count">グルメと街歩き</span></div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/castle.jpg" alt="熊本城の天守閣" loading="lazy">
+      <div class="q-cap">熊本城 天守閣（そらみみ・CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">熊本城</span><span class="badge b-view">復興のシンボル</span></div>
+      <p class="q-desc">天守閣に登って復興の現在地を自分の目で見る。この旅の趣旨がここで一本つながる。</p>
+      <div class="q-meta">市電・通町筋から徒歩</div>
+      <div class="links"><a class="go" href="https://castle.kumamoto-guide.jp/" target="_blank" rel="noopener">公式サイト</a><a href="https://castle.kumamoto-guide.jp/info/" target="_blank" rel="noopener">見学案内</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/johsaien.jpg" alt="桜の馬場 城彩苑の街並み" loading="lazy">
+      <div class="q-cap">桜の馬場 城彩苑（CC BY-SA 4.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">桜の馬場 城彩苑</span><span class="badge b-food">食べ歩き</span></div>
+      <p class="q-desc">熊本城のふもとの城下町ゾーン。土産と食べ歩きはここで一気に回収できる。</p>
+      <div class="q-meta">熊本城のすぐ下・城見学とセットで</div>
+      <div class="links"><a class="go" href="https://www.sakuranobaba-johsaien.jp/" target="_blank" rel="noopener">公式サイト</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/basashi.jpg" alt="皿に盛られた馬刺し" loading="lazy">
+      <div class="q-cap">馬刺し（pelican・CC BY-SA 2.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">馬刺し</span><span class="badge b-food">名物</span></div>
+      <p class="q-desc">サウナ後のたんぱく質補給という建前で郷土の名物を堪能する。下通の郷土料理店が探しやすい。</p>
+      <div class="q-meta">熊本市・城下や下通のお店で</div>
+      <div class="links"><a class="go" href="https://kumamoto-guide.jp/gourmets/" target="_blank" rel="noopener">熊本市観光ガイド</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/taipien.jpg" alt="太平燕（春雨スープ）" loading="lazy">
+      <div class="q-cap">太平燕（CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">太平燕（紅蘭亭）</span><span class="badge b-food">名物</span></div>
+      <p class="q-desc">春雨スープの熊本ソウルフード。老舗の紅蘭亭が定番。サ飯としての適性が異常に高い。</p>
+      <div class="q-meta">上通・下通エリア</div>
+      <div class="links"><a class="go" href="https://www.kourantei.com/" target="_blank" rel="noopener">紅蘭亭 公式</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/ramen.jpg" alt="熊本ラーメン" loading="lazy">
+      <div class="q-cap">熊本ラーメン（CC0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">熊本ラーメン 黒亭</span><span class="badge b-food">焦がしにんにく</span></div>
+      <p class="q-desc">マー油の効いた熊本ラーメンの老舗。熊本駅の近くなので、帰りの飛行機の前に締められる。</p>
+      <div class="q-meta">熊本駅近く</div>
+      <div class="links"><a class="go" href="https://kokutei.co.jp/" target="_blank" rel="noopener">公式サイト</a><a href="https://kokutei.co.jp/access/" target="_blank" rel="noopener">アクセス</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/kusasenri.jpg" alt="草千里ヶ浜の草原" loading="lazy">
+      <div class="q-cap">草千里ヶ浜（Project Kei・CC BY-SA 4.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">草千里ヶ浜</span><span class="badge b-view">絶景</span></div>
+      <p class="q-desc">阿蘇の大草原。テントサウナのあとにここで風に当たれば、外気浴の天井を知ることになる。</p>
+      <div class="q-meta">阿蘇市・阿蘇山上ターミナル線でアクセス</div>
+      <div class="links"><a class="go" href="https://www.asocity-kanko.jp/spot/kusasenri/" target="_blank" rel="noopener">観光情報</a></div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-photo"><img src="img/shimotori.jpg" alt="下通アーケード" loading="lazy">
+      <div class="q-cap">下通アーケード（663highland・CC BY-SA 3.0）</div></div>
+    <div class="q-body">
+      <div class="q-top"><span class="q-name">下通・上通アーケード</span><span class="badge b-view">買い物</span></div>
+      <p class="q-desc">九州屈指の長さのアーケード街。夜も歩けるし、鶴屋百貨店のくまモンスクエアで営業部長にも会える。</p>
+      <div class="q-meta">熊本市中心部</div>
+      <div class="links"><a class="go" href="https://www.kumamon-sq.jp/" target="_blank" rel="noopener">くまモンスクエア</a><a href="https://kumamoto-guide.jp/" target="_blank" rel="noopener">熊本市観光ガイド</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-plan">
+  <div class="sec-h"><h2>モデルプラン</h2><span class="count">5案・1人あたり概算</span></div>
+
+  <div class="plan">
+    <div class="plan-photo"><img src="img/sauna.jpg" alt="サウナ室" loading="lazy"></div>
+    <div class="plan-body">
+      <div class="plan-top"><span class="nights">1泊2日</span><h3>弾丸ととのい</h3></div>
+      <p class="plan-for">とにかく安く、湯らっくすだけ味わえればいい人向け。</p>
+      <div class="plan-flow"><b>1日目</b> 朝イチ成田発 → 熊本城 → 馬刺し → 湯らっくすに泊まる（館内で完結）<br><b>2日目</b> 朝ウナ → 黒亭で締め → 夜便で帰京</div>
+      <div class="est num">
+        <div class="est-row"><span>航空券 往復（セール時）</span><span class="v">11,000円</span></div>
+        <div class="est-row"><span>湯らっくす ドミトリー1泊</span><span class="v">4,800円</span></div>
+        <div class="est-row"><span>空港バス往復・市内交通</span><span class="v">2,500円</span></div>
+        <div class="est-row"><span>食事・入浴 2日分</span><span class="v">6,000円</span></div>
+        <div class="est-row total"><span>合計</span><span class="v">約24,000円</span></div>
+      </div>
+      <p class="est-note">1泊なので割引の恩恵は小さめ。宿泊のみ割引（60%・上限2万円）が使えれば宿代は約1,900円まで下がり、<b>総額2万円強</b>になる。</p>
+    </div>
+  </div>
+
+  <div class="plan">
+    <div class="plan-photo"><img src="img/tentsauna.jpg" alt="テントサウナ" loading="lazy"></div>
+    <div class="plan-body">
+      <div class="plan-top"><span class="nights">2泊3日</span><h3>王道サウナ旅</h3></div>
+      <p class="plan-for">市内と阿蘇の両方。今回いちばんおすすめの型。</p>
+      <div class="plan-flow"><b>1日目</b> 熊本城 → 馬刺し → 湯らっくす<br><b>2日目</b> 阿蘇へ → MIKI TAO SAUNA貸切 → 草千里 → どんどこ湯<br><b>3日目</b> 城の湯で朝ウナ → 太平燕 → 帰京</div>
+      <div class="est num">
+        <div class="est-row"><span>航空券 往復（セール時）</span><span class="v">11,000円</span></div>
+        <div class="est-row"><span>市内ホテル 2泊（1泊1万円前提）</span><span class="v">20,000円</span></div>
+        <div class="est-row"><span>阿蘇往復バス・空港バス・市電</span><span class="v">6,000円</span></div>
+        <div class="est-row"><span>MIKI TAO 貸切（2人6,000円の折半）</span><span class="v">3,000円</span></div>
+        <div class="est-row"><span>サウナ入浴・食事 3日分</span><span class="v">12,000円</span></div>
+        <div class="est-row total"><span>合計</span><span class="v">約52,000円</span></div>
+      </div>
+      <p class="est-note">宿泊2泊に60%割引が効けば宿代は<b>2万円→8,000円</b>。総額は<b>約4万円</b>まで下がる。</p>
+    </div>
+  </div>
+
+  <div class="plan">
+    <div class="plan-photo"><img src="img/hotel.jpg" alt="ホテルの客室" loading="lazy"></div>
+    <div class="plan-body">
+      <div class="plan-top"><span class="nights">2泊3日</span><h3>パックまるごと割引</h3></div>
+      <p class="plan-for">手続きがいちばんラクで、割引額が最大になる型。羽田発着。</p>
+      <div class="plan-flow">JAL/ANAのダイナミックパッケージ（航空券＋市内ホテル2泊）を1本で予約。行程は王道サウナ旅と同じ。</div>
+      <div class="est num">
+        <div class="est-row"><span>パック定価（航空券＋2泊）</span><span class="v">55,000円</span></div>
+        <div class="est-row"><span>ふっこう応援割 60%（上限3万円）</span><span class="v">−30,000円</span></div>
+        <div class="est-row"><span>現地交通・MIKI TAO・食事</span><span class="v">21,000円</span></div>
+        <div class="est-row total"><span>合計</span><span class="v">約46,000円</span></div>
+      </div>
+      <p class="est-note">交通にも割引が効くのがこの型だけの利点。羽田発着で移動もラク。<b>ただし販売開始は9月発表待ち</b>で、先着枠を取れるかは運。</p>
+    </div>
+  </div>
+
+  <div class="plan">
+    <div class="plan-photo"><img src="img/kurokawa.jpg" alt="黒川温泉の温泉街" loading="lazy"></div>
+    <div class="plan-body">
+      <div class="plan-top"><span class="nights">2泊3日</span><h3>黒川温泉ふりきり</h3></div>
+      <p class="plan-for">サウナ半分・温泉旅館半分。ちょっと贅沢したい回に。</p>
+      <div class="plan-flow"><b>1日目</b> 熊本城 → 湯らっくす → 市内泊<br><b>2日目</b> 黒川温泉へ（バス約3時間）→ 入湯手形で3湯 → 客室サウナのある旅館泊<br><b>3日目</b> 朝風呂 → 熊本市内へ戻って帰京</div>
+      <div class="est num">
+        <div class="est-row"><span>航空券 往復（セール時）</span><span class="v">11,000円</span></div>
+        <div class="est-row"><span>市内ホテル 1泊</span><span class="v">10,000円</span></div>
+        <div class="est-row"><span>黒川の旅館 1泊2食（目安）</span><span class="v">22,000円</span></div>
+        <div class="est-row"><span>黒川往復バス・空港バス</span><span class="v">7,000円</span></div>
+        <div class="est-row"><span>入湯手形・食事</span><span class="v">8,000円</span></div>
+        <div class="est-row total"><span>合計</span><span class="v">約58,000円</span></div>
+      </div>
+      <p class="est-note">宿代が高いぶん<b>割引の効きが最大</b>。2泊とも60%オフなら宿代32,000円→12,800円で、総額は<b>約39,000円</b>。高い宿ほど得をする制度なので、実はこの型がいちばん賢い。</p>
+    </div>
+  </div>
+
+  <div class="plan">
+    <div class="plan-photo"><img src="img/kusasenri.jpg" alt="草千里ヶ浜の草原" loading="lazy"></div>
+    <div class="plan-body">
+      <div class="plan-top"><span class="nights">3泊4日</span><h3>完全制覇</h3></div>
+      <p class="plan-for">このページのサウナを全部踏む。連休を丸ごと使える時に。</p>
+      <div class="plan-flow"><b>1日目</b> 熊本城・城彩苑 → 湯らっくす → 市内泊<br><b>2日目</b> 阿蘇 → MIKI TAO貸切 → 草千里 → どんどこ湯 → 市内泊<br><b>3日目</b> 黒川温泉 → 入湯手形 → 旅館泊<br><b>4日目</b> 城の湯で朝ウナ → 太平燕・買い物 → 帰京</div>
+      <div class="est num">
+        <div class="est-row"><span>航空券 往復（セール時）</span><span class="v">11,000円</span></div>
+        <div class="est-row"><span>宿 3泊（市内2＋黒川1）</span><span class="v">42,000円</span></div>
+        <div class="est-row"><span>阿蘇・黒川・空港の交通</span><span class="v">11,000円</span></div>
+        <div class="est-row"><span>サウナ・入湯手形・食事 4日分</span><span class="v">20,000円</span></div>
+        <div class="est-row total"><span>合計</span><span class="v">約84,000円</span></div>
+      </div>
+      <p class="est-note">3泊すべてに60%割引（上限2万円/泊）が効けば宿代42,000円→16,800円。総額<b>約59,000円</b>。日数のわりに割安になる。</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>試算の前提</h3>
+    <ul>
+      <li>1人あたり・2人で行く前提（MIKI TAOの貸切料金を折半）</li>
+      <li>航空券はジェットスターのセール価格（片道5,490円）を往復で計上。諸費用で数千円上振れすることがある</li>
+      <li>市内ホテル1泊1万円、黒川の旅館1泊2食22,000円は<b>相場からの仮置き</b>。実際の空室・料金は各予約サイトで要確認</li>
+      <li>割引後の金額は、ふっこう応援割が予定どおり10/1開始で対象宿を取れた場合の計算</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tab-access">
+  <div class="sec-h"><h2>いまやってるセール</h2><span class="count">確認日 2026-08-30</span></div>
+  <div class="note">
+    <h3>ジェットスター スーパースターセール</h3>
+    <p>成田→熊本が片道<b class="num">5,490円〜</b>。搭乗期間は9/29〜2027/1/28なので<b>10月の旅にドンピシャ</b>。</p>
+    <div class="warn"><b>販売は9/2（火）16:59まで。</b>セール運賃は原則払い戻し不可なので、乗るなら先に日程を確定させること。</div>
+    <div class="links"><a class="go" href="https://www.jetstar.com/jp/ja/deals" target="_blank" rel="noopener">セールを見る</a></div>
+    <p class="src">出典: <a href="https://tabiris.com/archives/jetstarsale20260828/" target="_blank" rel="noopener">タビリス</a>・在庫連動で早く終わることあり</p>
+  </div>
+  <div class="note">
+    <h3>ANA国内線タイムセール</h3>
+    <p>販売は<b>8/31まで</b>・搭乗10/1〜2027/1/31。熊本線が対象に入っているかと価格は公式ページで要確認。</p>
+    <div class="links"><a class="go" href="https://www.ana.co.jp/ja/jp/domestic/theme/timesale/sale/" target="_blank" rel="noopener">ANAタイムセール</a><a href="https://www.jal.co.jp/jp/ja/dom/special/timesale/" target="_blank" rel="noopener">JALタイムセール</a></div>
+  </div>
+  <div class="note">
+    <h3>セールの合わせ技</h3>
+    <p>セール航空券を先に買うと交通は割引対象外になるが、代わりに<b>宿泊だけふっこう割60%オフ</b>（上限2万円/泊）を狙える。ジェットスター往復約11,000円＋割引後の宿なら、パック案より安くなる可能性がある。ただし宿の割引販売開始はまだ先なので、確実に取りたいならパック案が堅い。</p>
+  </div>
+
+  <div class="sec-h"><h2>東京からの行き方くらべ</h2><span class="count">片道・10月目安</span></div>
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>手段</th><th>片道</th><th>時間</th><th>ひとこと</th></tr>
+      <tr><td><b>ジェットスター</b><br>成田→熊本</td><td class="price num">5,490円〜<br>(セール)</td><td class="num">約2時間</td><td>単体最安。1日2往復</td></tr>
+      <tr><td><b>ソラシドエア</b><br>羽田→熊本</td><td class="price">要確認</td><td class="num">約1時間50分</td><td>羽田発が楽。早割の販売形態が変更中</td></tr>
+      <tr><td><b>JAL / ANA</b><br>羽田→熊本</td><td class="price num">14,000円〜</td><td class="num">約1時間50分</td><td>単体では高いがパックの部品なら化ける</td></tr>
+      <tr><td><b>新幹線</b><br>東京→熊本</td><td class="price num">28,660円</td><td class="num">約6時間</td><td>のぞみ+さくら乗継。今回は分が悪い</td></tr>
+      <tr><td><b>パック <span class="tag-best">本命</span></b><br>航空券+宿2泊</td><td class="price num">総額55,000円前後</td><td>—</td><td>ここに60%割引が丸ごと効く（割引タブ）</td></tr>
+    </table>
+  </div>
+  <div class="note">
+    <h3>結論</h3>
+    <p>いまはジェットスターがセール中なので、<b>「セール航空券＋宿だけ割引」と「パックまるごと割引」の2択</b>。前者は安いが9/2までに日程確定が必要、後者はラクで確実だが9月の販売開始待ち。急がないならパック、めしあぴと今週中に日程が決まるならセールを取る。</p>
+  </div>
+</section>
+
+<section id="tab-deal">
+  <div class="sec-h"><h2>九州ふっこう応援割</h2><span class="count">2026-08-28 観光庁発表</span></div>
+  <div class="note">
+    <div class="big-off"><b>60%</b><span>オフ（熊本県・鹿児島県）</span></div>
+    <ul>
+      <li>宿泊のみ: 上限 <b class="num">20,000円</b>/泊</li>
+      <li>交通付き宿泊ツアー2泊以上: 上限 <b class="num">30,000円</b></li>
+      <li>対象は<b>10月1日宿泊分から</b>。居住地の制限なし</li>
+      <li>宿泊が必須。日帰り・交通単体には使えない</li>
+    </ul>
+    <div class="warn"><b>予約はまだ始まっていない。</b>じゃらん・楽天・JTB等の販売開始日は9月中に発表予定。総予算15.5億円の先着なので、開始日に即予約が勝負。</div>
+    <p class="src">出典: <a href="https://www.mlit.go.jp/kankocho/topics04_00093.html" target="_blank" rel="noopener">観光庁</a> ／ <a href="https://www.travelvoice.jp/20260828-160419" target="_blank" rel="noopener">Travel Voice</a>（確認日 2026-08-30）</p>
+  </div>
+
+  <div class="note">
+    <h3>作戦はこの3手</h3>
+    <ol class="steps">
+      <li>めしあぴと<b>10月の候補日を今決める</b>（平日絡みだと宿も便も取りやすい）</li>
+      <li>9月の<b>販売開始日の発表を見張る</b>（じゃらん・楽天・JAL/ANAパック）</li>
+      <li>開始日に<b>宿かパックを即予約</b> → MIKI TAOの貸切枠も同時に押さえる</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <h3>先に使えるやつ</h3>
+    <p>楽天トラベルが<b>熊本・鹿児島 観光応援クーポン</b>を配布中（8/28〜先着）。楽パック5,000〜11,000円オフ等。ふっこう割開始前の9月に前乗りするならこっち。</p>
+    <div class="links"><a class="go" href="https://coupon.travel.rakuten.co.jp/coupon/search/japan_12_kumamoto-0-0-0-1-1" target="_blank" rel="noopener">クーポンを見る</a></div>
+    <p class="src">出典: <a href="https://corp.rakuten.co.jp/news/press/2026/0828_01.html" target="_blank" rel="noopener">楽天プレスリリース</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>料金・営業情報は2026年8月30日時点の各出典による。予約前に公式サイトで最新情報を確認のこと。</p>
+  <p>写真は<a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>の自由ライセンス素材（各写真に作者とライセンスを表示）。「※イメージ写真」は施設そのものではありません。</p>
+</footer>
+</div>
+
+<nav>
+  <button data-tab="tab-sauna" class="on"><svg viewBox="0 0 24 24"><path d="M4 21h16M6 18c0-5 2.5-7 6-7s6 2 6 7"/><path d="M8 7c0-1.5 1-2 1-3M12 7c0-1.5 1-2 1-3M16 7c0-1.5 1-2 1-3"/></svg>サウナ</button>
+  <button data-tab="tab-stay"><svg viewBox="0 0 24 24"><path d="M3 19V5M3 15h18v4M3 12h8V9a2 2 0 0 1 2-2h4a4 4 0 0 1 4 4v1"/><circle cx="7" cy="9" r="1.6"/></svg>宿泊</button>
+  <button data-tab="tab-sight"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg>観光</button>
+  <button data-tab="tab-plan"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/><circle cx="19" cy="19" r="2.6"/></svg>プラン</button>
+  <button data-tab="tab-access"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>交通</button>
+  <button data-tab="tab-deal"><svg viewBox="0 0 24 24"><path d="M15 5l-11 11a2.1 2.1 0 0 0 0 3l1 1a2.1 2.1 0 0 0 3 0l11-11"/><path d="M18 4l2 2M9 7.5L11.5 5a2.1 2.1 0 0 1 3 0l4.5 4.5a2.1 2.1 0 0 1 0 3L16.5 15"/><circle cx="7" cy="17" r=".5"/></svg>割引</button>
+</nav>
+
+<script>
+document.querySelectorAll("nav button").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.querySelectorAll("nav button").forEach(function(x){x.classList.toggle("on",x===b)});
+    document.querySelectorAll("main>section").forEach(function(s){s.classList.toggle("on",s.id===b.dataset.tab)});
+    window.scrollTo({top:0});
+  });
+});
+</script>
+</body>
+</html>
